@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello JG</title>
+    <meta name="JG" content="JG, jingang.li@luckincoffee.com"/>
+    <script>
+	    function showHello(){
+	        alert("hello");
+	    }
+	     function showString(userString){
+	        alert("hi"+userString);
+	    }
+	     function returnedJsShowString(userString){
+	        alert("hi"+userString);
+	        return "returnedJsShowString";
+	    }
+
+	    function click_two(){
+	    	alert("hello  你好");
+	    	// 调用java原生方法
+	    	demoClass.showLog();
+	    }
+	    function click_three(){
+	    	var result=prompt("js://demo?arg=333","");
+	    	alert("three button result:"+result);
+	    }
+	    function click_result(result){
+	    	alert("two button result:"+result);
+	    }
+    </script>
+    <style type="text/css">
+    	input{
+    		width: 300px;
+    		height: 150px;
+    		margin: 20px auto;
+    		text-align:center;
+    		font-size:30px;
+    	}
+    </style>
+
+</head>
+
+<body>
+<p style=" margin:0 auto; text-align:center;">
+    <input id="one"  value="showAlert"  type="button" onclick="showHello()"/></p>
+<p style=" margin:0 auto; text-align:center;">
+    <input id="two" value="two" type="button" onclick="click_two()"/></p>
+<p style=" margin:0 auto; text-align:center;">
+    <input id="three"  value="three" type="button" onclick="click_three()"/></p>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">High Performance WebView</string>
+    <string name="bt_string">点击调用js方法</string>
+
+</resources>
