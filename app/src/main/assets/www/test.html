@@ -6,7 +6,7 @@
     <meta name="JG" content="JG, jingang.li@luckincoffee.com"/>
     <script>
 	    function showHello(){
-	        alert("hello");
+            alert("hello");
 	    }
 	     function showString(userString){
 	        alert("hi"+userString);
@@ -17,9 +17,14 @@
 	    }
 
 	    function click_two(){
-	    	alert("hello  你好");
-	    	// 调用java原生方法
+
+	    	// 调用java原生方法 无返回值
 	    	demoClass.showLog();
+	    	// 调用java原生方法 有返回值
+	    	var nativeActivityName=demoClass.getCurrentActivityName();
+	    	alert("hello  nativeActivityName="+nativeActivityName);
+
+
 	    }
 	    function click_three(){
 	    	var result=prompt("js://demo?arg=333","");

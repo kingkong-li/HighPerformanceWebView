@@ -25,7 +25,7 @@ import android.widget.Toast;
  * @author jingang.li
  */
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG=MainActivity.class.getSimpleName();
+    private static final String TAG= MainActivity.class.getSimpleName();
     private WebView mWebView;
     private Button mButton;
     private int mCurrentState=0;
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         // WebView也是一个view,所以可以设置它的背景 View可以理解为 一幅画 =背景+前景。
         mWebView.setBackgroundColor(Color.RED);
 
-        
+
         //一些设置值放在了一个统一的地方、形成一个新的类：WebSettings
 
         // 使WebView可以运行Js
@@ -121,8 +121,8 @@ public class MainActivity extends AppCompatActivity {
         //设置JS是否可以自己自动打开新的页面弹窗，默认false
         mWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
         // 设置用户代理字符串，用户代理字符串就是告诉服务端现在我用的啥样的浏览器，以及浏览器的
-        // 运行环境，服务端会根据不同的浏览器返回不同的网页内容，Android 早期的浏览器内核都是
-        // Linux; Android 4.4.2; Lenovo K910e Build/KOT49H) AppleWebKit/537.36
+        // 运行环境，服务端会根据不同的浏览器返回不同的网页内容，Android 早期的浏览器内核都是AppleWebKit
+        // 例如：Linux; Android 4.4.2; Lenovo K910e Build/KOT49H) AppleWebKit/537.36
         Log.v(TAG,"mWebView.getUserAgentString="+mWebView.getSettings().getUserAgentString());
         mWebView.getSettings().setUserAgentString(null);
 
@@ -282,12 +282,24 @@ public class MainActivity extends AppCompatActivity {
 
     private class DemoClass {
 
+        /**
+         * JS调用Android方法，无返回值。
+         */
         @JavascriptInterface
         public void showLog(){
             Toast.makeText(MainActivity.this,
                     "JS调用Android",Toast.LENGTH_LONG).show();
-            Log.v(TAG,"showLog- running");
+            Log.v(TAG,"showLog- running end");
         }
+
+        @JavascriptInterface
+        public String  getCurrentActivityName(){
+            Toast.makeText(MainActivity.this,
+                    "JS调用Android",Toast.LENGTH_LONG).show();
+            Log.v(TAG,"getCurrentActivityName");
+            return TAG;
+        }
+
 
 
     }
