@@ -125,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
         // 例如：Linux; Android 4.4.2; Lenovo K910e Build/KOT49H) AppleWebKit/537.36
         Log.v(TAG,"mWebView.getUserAgentString="+mWebView.getSettings().getUserAgentString());
         mWebView.getSettings().setUserAgentString(null);
+        // 添加从webview下载文件的处理
 
     }
 
